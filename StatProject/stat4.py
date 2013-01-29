@@ -1,15 +1,9 @@
 import csv
 import math 
+import format
 
-# Using the two-list structure...
-data_amounts = []
-data_recipients = []
-with open('contributions.csv', 'rb') as csvfile:
-        contributions = csv.reader(csvfile, delimiter=',')
-        next(contributions)
-        for row in contributions:
-                data_amounts.append(int(row[0]))
-		data_recipients.append(row[7])
+# Using our new format function to create the two-list structure...
+[data_amounts, data_recipients] = format.format('contributions.csv',0,7)
 
 # Using standard python functions (and a little bit of creativity)
 print "Maximum value: ",max(data_amounts)
