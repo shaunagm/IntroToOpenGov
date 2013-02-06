@@ -1,12 +1,13 @@
 import csv
 
-with open('contributions.csv', 'rb') as csvfile:
+with open('contributions.csv','rb') as csvfile:
 	contributions = csv.reader(csvfile, delimiter=',')
 	for row in contributions:
 		print "Amount: ",row[0]," Recipient: ",row[7]
 
 
 ## Comments (remove and place in instructor guide before event)
+#  Compatibility issues - print should be print(), should csvfile be opened as 'rb'?
 ## This file introduces/demonstrates:
 #    # Reading in information via csvreader
 #    # Iterating through data with a for loop
