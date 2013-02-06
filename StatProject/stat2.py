@@ -1,14 +1,15 @@
+from __future__ import print_function
 import csv
 
 data = []
 
-with open('contributions.csv', 'rb') as csvfile:
-	contributions = csv.reader(csvfile, delimiter=',')
-	for row in contributions:
-		data.append([int(row[0]),row[7]])
+with open('contributions.csv') as csvfile:
+    contributions = csv.DictReader(csvfile, delimiter=',')
+    for row in contributions:
+        data.append([int(row['amount']),row['recipient_name']])
 
-print data
-print "Final row: ", data[len(data)-1]
+print(data)
+print("Final row: ", data[-1])
 
 ## Thoughts:
 #  I think numpy turned out to be overkill?  Moved to scrap.
