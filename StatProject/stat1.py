@@ -8,6 +8,7 @@ with open('contributions.csv') as csvfile:
 
 
 ## Comments (remove and place in instructor guide before event)
+#  Compatibility issues - print should be print(), should csvfile be opened as 'rb'?
 ## This file introduces/demonstrates:
 #    # Reading in information via csvreader
 #    # Iterating through data with a for loop
