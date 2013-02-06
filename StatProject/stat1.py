@@ -1,9 +1,10 @@
+from __future__ import print_function
 import csv
 
-with open('contributions.csv','rb') as csvfile:
-	contributions = csv.reader(csvfile, delimiter=',')
-	for row in contributions:
-		print "Amount: ",row[0]," Recipient: ",row[7]
+with open('contributions.csv') as csvfile:
+    contributions = csv.DictReader(csvfile, delimiter=',')
+    for row in contributions:
+        print("Amount: ", row['amount'], " Recipient: ", row['recipient_name'])
 
 
 ## Comments (remove and place in instructor guide before event)
