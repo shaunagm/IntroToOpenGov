@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 ### This example uses the pandas library to do some simple visualizations.
 ### Pandas is a very powerful data-manipulation library that takes some time to learn.
 ### http://pandas.pydata.org/
