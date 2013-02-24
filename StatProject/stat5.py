@@ -13,14 +13,14 @@ import scipy.stats as scipy
 [data_amounts,data_recipient_party] = format.format('contributions.csv',0,5)
 
 # Create array to feed into t-test function
-x1,x2 = [],[]
+rep_amounts, dem_amounts = [],[]
 for i in range(len(data_recipient_party)):
 	if (data_recipient_party[i] == "R"):
-		x1.append(data_amounts[i])
+		rep_amounts.append(data_amounts[i])
 	if (data_recipient_party[i] == "D"):
-		x2.append(data_amounts[i])
+		dem_amounts.append(data_amounts[i])
 
 # Calculate
-[t,p] = scipy.ttest_ind(x1,x2)
+[t,p] = scipy.ttest_ind(rep_amounts, dem_amounts)
 
 print "t: ",t," p: ",p
